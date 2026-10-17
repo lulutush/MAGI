@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "artifact_id": "synthetic-invalid-example",
+    "artifact_type": "demonstration",
+    "version": "1.0.0",
+    "status": "validated"
+  },
+  "content": {"synthetic": true, "review_complete": false},
+  "language": {
+    "en": "Intentionally invalid example: missing review and a boolean completeness value cannot support validated status.",
+    "fr": "Exemple volontairement invalide : revue manquante et complétude booléenne incompatibles avec validated."
+  },
+  "qa": {
+    "checks": [{"name": "review", "status": "not_run"}],
+    "assumptions": [],
+    "limitations": ["This is a negative test fixture, not a usable validated artifact."],
+    "warnings": ["Expected CLI exit code: 2."],
+    "required_inputs": ["review"],
+    "provided_inputs": [],
+    "missing_inputs": ["review"],
+    "user_questions": ["Review the synthetic sample?"],
+    "completeness": true
+  }
+}

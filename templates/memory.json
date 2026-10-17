@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "artifact_id": "memory-template",
+    "artifact_type": "memory",
+    "version": "1.0.0",
+    "status": "draft"
+  },
+  "content": {
+    "payload": {
+      "entries": []
+    }
+  },
+  "language": {
+    "text": "Empty opt-in memory record"
+  },
+  "qa": {
+    "checks": [],
+    "assumptions": [],
+    "limitations": [
+      "No memory entries are supplied or collected automatically.",
+      "This document is not connected to any host memory store."
+    ],
+    "warnings": [],
+    "required_inputs": [],
+    "provided_inputs": [],
+    "missing_inputs": [],
+    "user_questions": []
+  }
+}

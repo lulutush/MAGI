@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "magi-reliability-core"
+version = "0.1.0"
+description = "Offline reference core for a portable AI reliability protocol"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+
+[project.urls]
+Repository = "https://github.com/lulutush/MAGI"
+
+[tool.setuptools]
+packages = ["magi"]

@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "artifact_id": "artifact-template",
+    "artifact_type": "record",
+    "version": "1.0.0",
+    "status": "draft"
+  },
+  "content": {
+    "payload": {}
+  },
+  "language": {
+    "text": "Blank artifact template"
+  },
+  "qa": {
+    "checks": [],
+    "assumptions": [],
+    "limitations": [
+      "Blank template only; no task has been performed or verified."
+    ],
+    "warnings": [],
+    "required_inputs": [],
+    "provided_inputs": [],
+    "missing_inputs": [],
+    "user_questions": []
+  }
+}

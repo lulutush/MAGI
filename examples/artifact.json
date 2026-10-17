@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "artifact_id": "synthetic-artifact-example",
+    "artifact_type": "demonstration",
+    "version": "1.0.0",
+    "status": "provisional"
+  },
+  "content": {
+    "synthetic": true,
+    "sample_values": [2, 4, 6],
+    "review_complete": false
+  },
+  "language": {
+    "en": "Standalone synthetic example: the structure is valid, but review is missing. Declarations only; no real observation was made.",
+    "fr": "Exemple synthétique autonome : la structure est valide, mais la revue manque. Déclarations uniquement ; aucune observation réelle n'a été effectuée."
+  },
+  "qa": {
+    "checks": [{"name": "review", "status": "not_run"}],
+    "assumptions": [],
+    "limitations": ["Declarative synthetic example only. Missing review prevents the validated status."],
+    "warnings": ["Do not mistake a valid provisional structure for independently verified content or a real observation."],
+    "required_inputs": ["sample_values", "review"],
+    "provided_inputs": ["sample_values"],
+    "missing_inputs": ["review"],
+    "user_questions": ["Can the synthetic sample be reviewed? / Le jeu synthétique peut-il être relu ?"],
+    "completeness": 0.5
+  }
+}

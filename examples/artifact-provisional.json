@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "artifact_id": "synthetic-provisional-example",
+    "artifact_type": "demonstration",
+    "version": "1.0.0",
+    "status": "provisional"
+  },
+  "content": {
+    "synthetic": true,
+    "sample_values": [2, 4, 6],
+    "review_complete": false
+  },
+  "language": {
+    "en": "Synthetic incomplete example: the structure is valid but review is still missing.",
+    "fr": "Exemple synthétique incomplet : la structure est valide, mais la revue manque encore."
+  },
+  "qa": {
+    "checks": [{"name": "review", "status": "not_run"}],
+    "assumptions": [],
+    "limitations": ["Missing review prevents the validated status."],
+    "warnings": ["Do not mistake a valid draft structure for independently verified content."],
+    "required_inputs": ["sample_values", "review"],
+    "provided_inputs": ["sample_values"],
+    "missing_inputs": ["review"],
+    "user_questions": ["Can the synthetic sample be reviewed? / Le jeu synthétique peut-il être relu ?"],
+    "completeness": 0.5
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "live_observation": {
+    "status": "observed",
+    "reference": "SYNTHETIC ONLY: demonstration of a declared current observation; no real observation was made."
+  },
+  "source_read": {
+    "status": "observed",
+    "reference": "SYNTHETIC ONLY: demonstration of a declared source review; this is not authenticated evidence."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "artifact_id": "synthetic-validated-example",
+    "artifact_type": "demonstration",
+    "version": "1.0.0",
+    "status": "validated",
+    "source": {
+      "type": "synthetic",
+      "references": []
+    }
+  },
+  "content": {
+    "synthetic": true,
+    "sample_values": [2, 4, 6],
+    "unit": "item"
+  },
+  "language": {
+    "en": "Synthetic STRUCT+COMP example. Validated means declared structure is consistent, not independently verified facts.",
+    "fr": "Exemple STRUCT+COMP synthétique. Le statut validated indique une cohérence déclarée, pas des faits vérifiés indépendamment."
+  },
+  "qa": {
+    "checks": [
+      {"name": "declared_structure", "status": "passed", "note": "Synthetic illustrative declaration, not an external audit."}
+    ],
+    "assumptions": ["The sample is intentionally synthetic."],
+    "limitations": ["No domain requirements or factual claims are authenticated."],
+    "warnings": [],
+    "required_inputs": ["sample_values"],
+    "provided_inputs": ["sample_values"],
+    "missing_inputs": [],
+    "user_questions": [],
+    "completeness": 1.0
+  }
+}

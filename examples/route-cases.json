@@ -1,0 +1,18 @@
+{
+  "synthetic": true,
+  "notes": {
+    "en": "Illustrative bounded-keyword cases, not calibrated accuracy measurements. The core never executes these requests.",
+    "fr": "Cas synthétiques par mots bornés, pas une mesure de confiance calibrée. Le cœur n'exécute jamais ces demandes."
+  },
+  "cases": [
+    {"query": "Translate this short sentence", "expected_profile": "magi_none"},
+    {"query": "Explique une métaphore", "expected_profile": "magi_light"},
+    {"query": "Analyse le système et son architecture", "expected_profile": "magi_standard"},
+    {"query": "Create a reusable JSON artifact", "expected_profile": "magi_strict"},
+    {"query": "Reformule vite cet audit de sécurité", "expected_profile": "magi_audit"},
+    {"query": "portefeuille", "expected_profile": "magi_light"},
+    {"query": "portfolio", "expected_profile": "magi_light"},
+    {"query": "Is port 443 open?", "expected_profile": "magi_audit"},
+    {"query": "Publish a JSON artifact using the previous conversation", "expected_profile": "magi_audit"}
+  ]
+}

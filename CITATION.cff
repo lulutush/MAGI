@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use MAGI in your work, you may cite it using this metadata. Citation is appreciated, not an additional license condition."
+title: "MAGI"
+abstract: "A portable reliability protocol for AI assistants: context, tools, evidence, adaptive rigor, a small offline reference core, and host instruction adapters."
+authors:
+  - name: "Lucas"
+version: "0.1.0"
+license: "Apache-2.0"
+repository-code: "https://github.com/lulutush/MAGI"

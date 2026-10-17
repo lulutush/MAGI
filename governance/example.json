@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "project_code": "example_project",
+    "artifact_id": "example_plan",
+    "artifact_type": "agent_workflow",
+    "scope": "Synthetic offline demonstration only",
+    "status": "provisional",
+    "version": "1.0.0",
+    "created_at": "2000-01-01T00:00:00Z",
+    "updated_at": "2000-01-01T00:00:00Z",
+    "source": {"type": "synthetic", "references": [], "notes": "Fictional fixture, not an execution record."},
+    "standard_id": "MAG-STRUCT-1.0+MAG-COMP-1.1"
+  },
+  "content": {
+    "payload": {"task": "Draft a generic review plan", "external_actions": false},
+    "depends_on": [
+      {"standard_id": "MAG-STRUCT-1.0", "role": "structure"},
+      {"standard_id": "MAG-COMP-1.1", "role": "completeness_gate"}
+    ]
+  },
+  "language": {"title": "Synthetic review plan", "summary": "A provisional plan with review criteria still missing."},
+  "qa": {
+    "checks": [{"name": "example_is_marked_synthetic", "passed": true}],
+    "assumptions": [],
+    "limitations": ["Synthetic fixture; no real task or approval has been performed."],
+    "warnings": ["Review criteria are still required."],
+    "required_inputs": [
+      {"name": "task_description", "severity": "blocking", "reason": "Defines the intended work."},
+      {"name": "review_criteria", "severity": "important", "reason": "Defines acceptable output."}
+    ],
+    "provided_inputs": ["task_description"],
+    "missing_inputs": [
+      {"name": "review_criteria", "severity": "important", "reason": "Defines acceptable output."}
+    ],
+    "user_questions": [{"input_name": "review_criteria", "question": "Which criteria should the review use?"}],
+    "accepted_missing_inputs": []
+  }
+}

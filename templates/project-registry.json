@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "artifact_id": "project-registry-template",
+    "artifact_type": "project_registry",
+    "version": "1.0.0",
+    "status": "draft"
+  },
+  "content": {
+    "payload": {
+      "projects": []
+    }
+  },
+  "language": {
+    "text": "Empty opt-in project registry"
+  },
+  "qa": {
+    "checks": [],
+    "assumptions": [],
+    "limitations": [
+      "No projects are supplied or discovered automatically.",
+      "A populated registry is an orientation aid, not proof of live state."
+    ],
+    "warnings": [],
+    "required_inputs": [],
+    "provided_inputs": [],
+    "missing_inputs": [],
+    "user_questions": []
+  }
+}
