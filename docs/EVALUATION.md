@@ -2,7 +2,9 @@
 
 ## Recorded exploratory study
 
-**2026-10-30 — BrowseComp, native Hermes deployment:** standard Hermes **2/8** correct; integrated MAGI **3/8** correct; one discordant success, **no statistically established benefit**, and higher token usage. Valid calibration was **1/2 in each condition**, separate from the scored sample.
+**2026-10-30 — BrowseComp, native Hermes deployment: an observed gain in favor of MAGI.** Integrated MAGI answered **3/8** correctly versus **2/8** for standard Hermes: **one additional correct answer, or +12.5 percentage points** (37.5% versus 25.0%).
+
+The gain is observed on this test; its repeatability and generalizability remain to be confirmed. Statistical uncertainty does not erase the observed difference or establish equivalence. MAGI used more tokens. Valid calibration was **1/2 in each condition**, separate from the scored sample.
 
 Read the [English report](evaluations/2026-10-30-browsecomp.md), [rapport français](evaluations/2026-10-30-browsecomp.fr.md), and [numeric data](evaluations/2026-10-30-browsecomp.data.json), including per-run outcomes, budgets, component use, interrupted calibration, accounting limits and offline consistency checks. The study used a specific integrated deployment, **not the standalone public package**. Private context and the execution harness are not published; arithmetic can be checked, but exact end-to-end reproduction and independent regrading are not enabled by this subset.
 

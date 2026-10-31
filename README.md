@@ -78,7 +78,9 @@ The public core keeps the distinction between **stable preferences, project stat
 
 ## Claims and limitations
 
-There is no demonstrated universal answer-quality improvement in this release. An [exploratory BrowseComp study (2026-10-30)](docs/evaluations/2026-10-30-browsecomp.md) observed **2/8 correct with standard Hermes and 3/8 with an integrated MAGI deployment**, with higher token usage and **no statistically established benefit**. This tests a specific deployment, not the standalone public package; its private execution environment is not reproduced by this repository. The report publishes calibration, per-run metrics, methods and limitations.
+An [exploratory BrowseComp study (2026-10-30)](docs/evaluations/2026-10-30-browsecomp.md) observed **a gain in favor of MAGI: 3/8 correct (37.5%), versus 2/8 (25.0%) with standard Hermes — one additional correct answer, or +12.5 percentage points**.
+
+**That observed gain is a result of this test; its repeatability and generalizability remain to be confirmed.** The small sample does not establish a general quality advantage or equivalence, and MAGI used more tokens. This tests a specific deployment, not the standalone public package; its private execution environment is not reproduced by this repository. The report publishes calibration, per-run metrics, methods and limitations.
 
 The [evaluation guide](docs/EVALUATION.md) separates recorded studies from proposed designs. A test suite passing proves only the behavior those tests cover.
 

@@ -60,7 +60,9 @@ Le parent doit exister hors du dépôt et ne comporter aucun lien symbolique ; l
 
 ## Évaluation exploratoire publiée
 
-Une [étude BrowseComp du 30 octobre 2026](docs/evaluations/2026-10-30-browsecomp.fr.md) observe **2/8 réponses correctes avec Hermes standard et 3/8 avec une installation MAGI intégrée**, avec davantage de tokens et **sans bénéfice statistiquement établi**. Elle concerne une installation particulière, pas le seul paquet public : ce dépôt ne reproduit pas son environnement privé d'exécution.
+Une [étude BrowseComp du 30 octobre 2026](docs/evaluations/2026-10-30-browsecomp.fr.md) observe **un gain en faveur de MAGI : 3/8 réponses correctes (37,5 %), contre 2/8 (25,0 %) avec Hermes standard — une bonne réponse supplémentaire, soit +12,5 points de pourcentage**.
+
+**Un gain est observé en faveur de MAGI sur ce test ; sa reproductibilité et sa généralisation restent à confirmer.** Le petit échantillon ne démontre ni supériorité générale ni équivalence, et MAGI consomme davantage de tokens. L'étude concerne une installation particulière, pas le seul paquet public : ce dépôt ne reproduit pas son environnement privé d'exécution.
 
 Le rapport distingue calibration et score final, publie les mesures par essai, le protocole, les incidents et les limites. Les [données chiffrées](docs/evaluations/2026-10-30-browsecomp.data.json) permettent des contrôles de cohérence hors ligne, pas une nouvelle correction indépendante des réponses.
 

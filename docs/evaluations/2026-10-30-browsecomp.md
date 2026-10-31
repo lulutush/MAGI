@@ -4,7 +4,9 @@
 
 ## Finding and scope
 
-**Observed: 2/8 correct with standard Hermes; 3/8 with the deployment's integrated MAGI workflow. The difference is not statistically established.**
+**Observed gain in favor of MAGI on this test: 3/8 correct (37.5%), versus 2/8 (25.0%) with standard Hermes — one additional correct answer, or +12.5 percentage points.**
+
+**A gain is observed in favor of MAGI on this test; its repeatability and generalizability remain to be confirmed.** An observed sample result and an established general advantage are distinct conclusions.
 
 This is an executed, small, paired study of a **specific Hermes deployment**, not a benchmark of the standalone public MAGI package. The public repository contains a portable reference extraction; the tested deployment also has its own complete skills, context stores, retrieval and orchestration. Installing this repository alone does not recreate that environment.
 
@@ -13,7 +15,9 @@ This is an executed, small, paired study of a **specific Hermes deployment**, no
 | Standard Hermes (`off`) | 2/8 | 25.0% |
 | Hermes + integrated MAGI (`on`) | 3/8 | 37.5% |
 
-Observed difference: **+12.5 percentage points**, consisting of one additional solved task. Both conditions solved the same other two tasks. Five tasks were unsuccessful in both conditions; none was solved only by the baseline. The two-sided exact McNemar test gives **p = 1.0**. This neither establishes a benefit nor proves equivalence. Per-condition Wilson intervals are included in the numeric data; they are not confidence intervals for the paired difference.
+**Paired outcomes:** MAGI solved one additional task; both conditions solved the same other two tasks. Five tasks were unsuccessful in both conditions; none was solved only by the baseline.
+
+**Statistical scope:** with eight tasks and one discordance, the two-sided exact McNemar test gives **p = 1.0**. This sample is insufficient to establish a repeatable advantage beyond this test. That uncertainty does not erase the observed gain or prove equivalence. Per-condition Wilson intervals are included in the numeric data; they are not confidence intervals for the paired difference.
 
 This is **not a full BrowseComp score or an official leaderboard submission**. There was one run per condition and task, not enough repeated evidence to characterize reliability or stochastic variation.
 
@@ -146,6 +150,6 @@ Sources:
 
 ## Interpretation
 
-The defensible finding is **one additional solved task, higher token usage, and substantial uncertainty**. Eight tasks and one discordance do not establish a general quality advantage, equivalence, or a contribution from any individual component. Web content changes and possible prior model exposure to a public benchmark further limit interpretation.
+**This test's result favors MAGI: one additional solved task, or +12.5 percentage points in accuracy.** It came with higher token usage. Its repeatability and generalizability remain to be confirmed: eight tasks and one discordance do not establish a general quality advantage, equivalence, or a contribution from any individual component. Web content changes and possible prior model exposure to a public benchmark further limit interpretation.
 
 A stronger future study would need a larger held-out sample, predeclared repetitions, transparent reproducible non-private fixtures/harness, matched-context ablations and independent grading. Those are proposed next experiments, **not experiments performed or evidence of an expected favorable result**.

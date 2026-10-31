@@ -4,7 +4,9 @@
 
 ## Résultat et périmètre
 
-**Résultat observé : 2 réponses correctes sur 8 avec Hermes standard, 3 sur 8 avec le workflow MAGI intégré à l'installation testée. La différence n'est pas statistiquement établie.**
+**Gain observé en faveur de MAGI sur ce test : 3 réponses correctes sur 8 (37,5 %), contre 2 sur 8 (25,0 %) avec Hermes standard — une bonne réponse supplémentaire, soit +12,5 points de pourcentage.**
+
+**Un gain est observé en faveur de MAGI sur ce test ; sa reproductibilité et sa généralisation restent à confirmer.** Le constat sur cet échantillon et la preuve d'une supériorité générale sont deux conclusions distinctes.
 
 Il s'agit d'une petite étude appariée réellement exécutée sur **une installation particulière d'Hermes**, et non d'un benchmark du seul paquet MAGI public. Ce dépôt fournit une extraction portable de référence ; l'installation évaluée possède aussi ses propres skills complets, mémoires, récupération contextuelle et orchestration. Installer ce dépôt ne reproduit pas cet environnement.
 
@@ -13,7 +15,9 @@ Il s'agit d'une petite étude appariée réellement exécutée sur **une install
 | Hermes standard (`off`) | 2/8 | 25,0 % |
 | Hermes + MAGI intégré (`on`) | 3/8 | 37,5 % |
 
-Écart observé : **+12,5 points de pourcentage**, soit une question supplémentaire résolue. Les deux conditions réussissent les mêmes deux autres questions et échouent toutes deux sur cinq questions. Aucune réussite n'est propre au témoin. Test exact de McNemar bilatéral : **p = 1,0**. Cela ne démontre ni amélioration fiable ni équivalence. Les intervalles de Wilson par condition figurent dans les données ; ils ne sont pas des intervalles de confiance de la différence appariée.
+**Résultats appariés :** MAGI réussit une question supplémentaire ; les deux conditions réussissent les mêmes deux autres questions et échouent toutes deux sur cinq questions. Aucune réussite n'est propre au témoin.
+
+**Portée statistique :** avec huit questions et une seule discordance, le test exact de McNemar bilatéral donne **p = 1,0**. Cet échantillon ne suffit pas à établir un avantage reproductible au-delà de ce test. Cette incertitude n'annule pas le gain observé et ne prouve pas l'équivalence des conditions. Les intervalles de Wilson par condition figurent dans les données ; ils ne sont pas des intervalles de confiance de la différence appariée.
 
 Ce n'est **ni un score sur tout BrowseComp ni une soumission à son classement officiel**. Un seul essai par condition et par question ne permet pas de caractériser la variabilité ou la fiabilité générale.
 
@@ -146,6 +150,6 @@ Sources :
 
 ## Conclusion
 
-Le constat défendable est **une question supplémentaire résolue, davantage de tokens et une grande incertitude**. Huit questions et une seule discordance ne démontrent ni supériorité générale, ni équivalence, ni contribution propre d'un composant. L'évolution du Web et une possible exposition préalable du modèle au corpus public limitent encore l'interprétation.
+**Le résultat de ce test est favorable à MAGI : une question supplémentaire résolue, soit +12,5 points de bonnes réponses.** Il s'accompagne d'une consommation de tokens supérieure. Sa reproductibilité et sa généralisation restent à confirmer : huit questions et une seule discordance ne démontrent ni supériorité générale, ni équivalence, ni contribution propre d'un composant. L'évolution du Web et une possible exposition préalable du modèle au corpus public limitent encore l'interprétation.
 
 Une étude plus solide nécessiterait un échantillon réservé plus large, des répétitions annoncées, un programme et des contextes non privés reproductibles, des ablations à contexte contrôlé et une correction indépendante. Ce sont des pistes futures, **pas des essais réalisés ni une promesse de résultat favorable**.
