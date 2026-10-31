@@ -78,7 +78,9 @@ The public core keeps the distinction between **stable preferences, project stat
 
 ## Claims and limitations
 
-There is no demonstrated universal answer-quality improvement in this release. The evaluation guide explains how to compare matched baselines, repeat runs, blind judgments, retain failures/null results, and measure time and cost. A test suite passing proves only the behavior those tests cover.
+There is no demonstrated universal answer-quality improvement in this release. An [exploratory BrowseComp study (2026-10-30)](docs/evaluations/2026-10-30-browsecomp.md) observed **2/8 correct with standard Hermes and 3/8 with an integrated MAGI deployment**, with higher token usage and **no statistically established benefit**. This tests a specific deployment, not the standalone public package; its private execution environment is not reproduced by this repository. The report publishes calibration, per-run metrics, methods and limitations.
+
+The [evaluation guide](docs/EVALUATION.md) separates recorded studies from proposed designs. A test suite passing proves only the behavior those tests cover.
 
 A prompt cannot promise to eliminate hallucinations, enforce permissions, or remember between chats. The reference CLI does not run tools for the assistant. Do not replace real approvals, sandboxing, or secret management with this protocol.
 

@@ -1,0 +1,705 @@
+{
+  "schema_version": "magi.benchmark-summary.v1",
+  "study_date": "2026-10-30",
+  "scope": "Exploratory deployment-specific Hermes/MAGI comparison, not a benchmark of the standalone public package or an official BrowseComp leaderboard result.",
+  "protocol": {
+    "locally_frozen_at_utc": "2026-10-30T20:41:27.221283+00:00",
+    "public_preregistration": false,
+    "benchmark": "BrowseComp",
+    "source": {
+      "source_url": "https://openaipublic.blob.core.windows.net/simple-evals/browse_comp_test_set.csv",
+      "source_csv_sha256": "7b24471cd5b3eb2a46830a14802b5c029ea62f488ff75a0f88af7923d1454abf",
+      "official_eval_revision": "652c89d0ca9df547706735883097e9537d40dc47",
+      "official_eval_sha256": "0bfb33cfdf5fa0e0d7da48068cc86c5a22acc755979be4a2b46f8a821cc44b74",
+      "available_rows": 1266,
+      "seed": 20261030
+    },
+    "sampling": "Python random.Random(seed).sample(range(available_rows), 10); first two calibration, remaining eight scored; zero-based CSV data-row indices.",
+    "selection": [
+      {
+        "id": "bc-1116",
+        "source_index": 1116,
+        "stage": "calibration",
+        "order": [
+          "off",
+          "on"
+        ]
+      },
+      {
+        "id": "bc-0450",
+        "source_index": 450,
+        "stage": "calibration",
+        "order": [
+          "on",
+          "off"
+        ]
+      },
+      {
+        "id": "bc-1147",
+        "source_index": 1147,
+        "stage": "scored",
+        "order": [
+          "off",
+          "on"
+        ]
+      },
+      {
+        "id": "bc-0683",
+        "source_index": 683,
+        "stage": "scored",
+        "order": [
+          "on",
+          "off"
+        ]
+      },
+      {
+        "id": "bc-0843",
+        "source_index": 843,
+        "stage": "scored",
+        "order": [
+          "off",
+          "on"
+        ]
+      },
+      {
+        "id": "bc-0076",
+        "source_index": 76,
+        "stage": "scored",
+        "order": [
+          "on",
+          "off"
+        ]
+      },
+      {
+        "id": "bc-1058",
+        "source_index": 1058,
+        "stage": "scored",
+        "order": [
+          "off",
+          "on"
+        ]
+      },
+      {
+        "id": "bc-1210",
+        "source_index": 1210,
+        "stage": "scored",
+        "order": [
+          "on",
+          "off"
+        ]
+      },
+      {
+        "id": "bc-0536",
+        "source_index": 536,
+        "stage": "scored",
+        "order": [
+          "off",
+          "on"
+        ]
+      },
+      {
+        "id": "bc-0553",
+        "source_index": 553,
+        "stage": "scored",
+        "order": [
+          "on",
+          "off"
+        ]
+      }
+    ],
+    "solver": {
+      "engine": "native run_agent.AIAgent",
+      "provider": "openai-codex",
+      "requested_model": "gpt-6-astra",
+      "reasoning_effort": "low",
+      "temperature": "native default, unchanged between conditions"
+    },
+    "native_tools_per_condition": 25,
+    "limits_per_run": {
+      "model_requests_including_subagents": 24,
+      "elapsed_seconds_checked_between_requests": 360,
+      "generated_tokens_soft_limit": 12000,
+      "supervisor_timeout_seconds": 430,
+      "max_parallel_cases": 2
+    },
+    "repetitions_per_task_condition": 1,
+    "condition_order": "Alternating off/on and on/off pairs; two task pairs in parallel, conditions sequential within each pair.",
+    "off": "Normal native Hermes with tools and the same initial memory and skill snapshots, without the MAGI-specific workflow.",
+    "on": "Three complete deployment MAGI skills plus real pre-task routing and contextual retrieval; native gate and provisional artifact commands after a frozen final answer.",
+    "integration": "manual_command_and_skill_not_global_middleware",
+    "isolation": "Fresh per-run writable copies; mount/PID namespaces hide the answer key, other runs and live profile. Network remains enabled for public research. This is not a general adversarial-sandbox certification.",
+    "grading": "Separate stateless, condition-blinded gpt-6-astra/low grader without tools/history, using pinned official semantic rubric and reference after the answer is frozen; capture-group parser corrected and tested.",
+    "missing_answers": "Incorrect under the declared resource ceiling. Infrastructure failures invalid, retained separately.",
+    "model_verification_limit": "Outbound model/effort checked and returned model ID recorded; reasoning-effort echo unavailable at normalization. Not independent identification of model weights."
+  },
+  "phases": {
+    "calibration": {
+      "source_tag": "calibration-v2",
+      "conditions": {
+        "off": {
+          "n": 2,
+          "correct": 1,
+          "accuracy_percent": 50.0,
+          "wilson_95_percent": [
+            9.453120573423075,
+            90.54687942657694
+          ],
+          "median_wall_seconds": 281.3168798685074,
+          "model_requests": 40,
+          "tool_calls": 81,
+          "input_tokens": 1547861,
+          "cached_input_tokens": 1431168,
+          "uncached_input_tokens": 116693,
+          "output_tokens": 5818,
+          "reasoning_tokens": 2393,
+          "total_tokens": 1553679
+        },
+        "on": {
+          "n": 2,
+          "correct": 1,
+          "accuracy_percent": 50.0,
+          "wilson_95_percent": [
+            9.453120573423075,
+            90.54687942657694
+          ],
+          "median_wall_seconds": 248.8735706806183,
+          "model_requests": 34,
+          "tool_calls": 65,
+          "input_tokens": 1610883,
+          "cached_input_tokens": 1475072,
+          "uncached_input_tokens": 135811,
+          "output_tokens": 5259,
+          "reasoning_tokens": 2420,
+          "total_tokens": 1616142
+        }
+      },
+      "paired": {
+        "n": 2,
+        "both_correct": 1,
+        "both_incorrect": 1,
+        "off_only_correct": 0,
+        "on_only_correct": 0,
+        "difference_percentage_points": 0.0,
+        "mcnemar_exact_two_sided_p": 1.0
+      },
+      "runs": [
+        {
+          "id": "bc-0450",
+          "mode": "off",
+          "status": "completed",
+          "correct": true,
+          "wall_seconds": 252.2812831401825,
+          "model_requests": 17,
+          "model_responses": 17,
+          "tool_calls": 48,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 635690,
+          "cached_input_tokens": 574720,
+          "uncached_input_tokens": 60970,
+          "output_tokens": 2605,
+          "reasoning_tokens": 694,
+          "total_tokens": 638295
+        },
+        {
+          "id": "bc-0450",
+          "mode": "on",
+          "status": "completed",
+          "correct": true,
+          "wall_seconds": 104.77473139762878,
+          "model_requests": 14,
+          "model_responses": 13,
+          "tool_calls": 30,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 604728,
+          "cached_input_tokens": 543744,
+          "uncached_input_tokens": 60984,
+          "output_tokens": 1801,
+          "reasoning_tokens": 342,
+          "total_tokens": 606529
+        },
+        {
+          "id": "bc-1116",
+          "mode": "off",
+          "status": "completed",
+          "correct": false,
+          "wall_seconds": 310.3524765968323,
+          "model_requests": 23,
+          "model_responses": 23,
+          "tool_calls": 33,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 912171,
+          "cached_input_tokens": 856448,
+          "uncached_input_tokens": 55723,
+          "output_tokens": 3213,
+          "reasoning_tokens": 1699,
+          "total_tokens": 915384
+        },
+        {
+          "id": "bc-1116",
+          "mode": "on",
+          "status": "budget_exhausted",
+          "correct": false,
+          "wall_seconds": 392.9724099636078,
+          "model_requests": 20,
+          "model_responses": 20,
+          "tool_calls": 35,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 1006155,
+          "cached_input_tokens": 931328,
+          "uncached_input_tokens": 74827,
+          "output_tokens": 3458,
+          "reasoning_tokens": 2078,
+          "total_tokens": 1009613
+        }
+      ]
+    },
+    "scored": {
+      "source_tag": "main-v1",
+      "conditions": {
+        "off": {
+          "n": 8,
+          "correct": 2,
+          "accuracy_percent": 25.0,
+          "wilson_95_percent": [
+            7.1479212752109,
+            59.07245696898311
+          ],
+          "median_wall_seconds": 361.8132606744766,
+          "model_requests": 121,
+          "tool_calls": 254,
+          "input_tokens": 3971323,
+          "cached_input_tokens": 3627648,
+          "uncached_input_tokens": 343675,
+          "output_tokens": 20885,
+          "reasoning_tokens": 9892,
+          "total_tokens": 3992208
+        },
+        "on": {
+          "n": 8,
+          "correct": 3,
+          "accuracy_percent": 37.5,
+          "wilson_95_percent": [
+            13.684428582359743,
+            69.42576053973727
+          ],
+          "median_wall_seconds": 329.76247453689575,
+          "model_requests": 139,
+          "tool_calls": 279,
+          "input_tokens": 6802479,
+          "cached_input_tokens": 6206720,
+          "uncached_input_tokens": 595759,
+          "output_tokens": 23391,
+          "reasoning_tokens": 10163,
+          "total_tokens": 6825870
+        }
+      },
+      "paired": {
+        "n": 8,
+        "both_correct": 2,
+        "both_incorrect": 5,
+        "off_only_correct": 0,
+        "on_only_correct": 1,
+        "difference_percentage_points": 12.5,
+        "mcnemar_exact_two_sided_p": 1
+      },
+      "runs": [
+        {
+          "id": "bc-0076",
+          "mode": "off",
+          "status": "completed",
+          "correct": true,
+          "wall_seconds": 171.91960263252258,
+          "model_requests": 14,
+          "model_responses": 13,
+          "tool_calls": 30,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 411282,
+          "cached_input_tokens": 364800,
+          "uncached_input_tokens": 46482,
+          "output_tokens": 1589,
+          "reasoning_tokens": 193,
+          "total_tokens": 412871
+        },
+        {
+          "id": "bc-0076",
+          "mode": "on",
+          "status": "completed",
+          "correct": true,
+          "wall_seconds": 222.82896757125854,
+          "model_requests": 18,
+          "model_responses": 17,
+          "tool_calls": 35,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 918741,
+          "cached_input_tokens": 835968,
+          "uncached_input_tokens": 82773,
+          "output_tokens": 2150,
+          "reasoning_tokens": 290,
+          "total_tokens": 920891
+        },
+        {
+          "id": "bc-0536",
+          "mode": "off",
+          "status": "budget_exhausted",
+          "correct": false,
+          "wall_seconds": 370.5312476158142,
+          "model_requests": 17,
+          "model_responses": 17,
+          "tool_calls": 39,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 553024,
+          "cached_input_tokens": 517120,
+          "uncached_input_tokens": 35904,
+          "output_tokens": 3643,
+          "reasoning_tokens": 2230,
+          "total_tokens": 556667
+        },
+        {
+          "id": "bc-0536",
+          "mode": "on",
+          "status": "completed",
+          "correct": true,
+          "wall_seconds": 329.21878719329834,
+          "model_requests": 18,
+          "model_responses": 17,
+          "tool_calls": 34,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 853433,
+          "cached_input_tokens": 778368,
+          "uncached_input_tokens": 75065,
+          "output_tokens": 3141,
+          "reasoning_tokens": 1422,
+          "total_tokens": 856574
+        },
+        {
+          "id": "bc-0553",
+          "mode": "off",
+          "status": "completed",
+          "correct": false,
+          "wall_seconds": 362.39901328086853,
+          "model_requests": 20,
+          "model_responses": 20,
+          "tool_calls": 48,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 761668,
+          "cached_input_tokens": 714880,
+          "uncached_input_tokens": 46788,
+          "output_tokens": 2884,
+          "reasoning_tokens": 873,
+          "total_tokens": 764552
+        },
+        {
+          "id": "bc-0553",
+          "mode": "on",
+          "status": "completed",
+          "correct": false,
+          "wall_seconds": 358.7653064727783,
+          "model_requests": 23,
+          "model_responses": 22,
+          "tool_calls": 47,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 1150644,
+          "cached_input_tokens": 1076736,
+          "uncached_input_tokens": 73908,
+          "output_tokens": 2696,
+          "reasoning_tokens": 699,
+          "total_tokens": 1153340
+        },
+        {
+          "id": "bc-0683",
+          "mode": "off",
+          "status": "completed",
+          "correct": true,
+          "wall_seconds": 132.7759826183319,
+          "model_requests": 15,
+          "model_responses": 14,
+          "tool_calls": 22,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 428099,
+          "cached_input_tokens": 387712,
+          "uncached_input_tokens": 40387,
+          "output_tokens": 1669,
+          "reasoning_tokens": 62,
+          "total_tokens": 429768
+        },
+        {
+          "id": "bc-0683",
+          "mode": "on",
+          "status": "completed",
+          "correct": true,
+          "wall_seconds": 138.6298086643219,
+          "model_requests": 12,
+          "model_responses": 11,
+          "tool_calls": 20,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 536154,
+          "cached_input_tokens": 468480,
+          "uncached_input_tokens": 67674,
+          "output_tokens": 1411,
+          "reasoning_tokens": 57,
+          "total_tokens": 537565
+        },
+        {
+          "id": "bc-0843",
+          "mode": "off",
+          "status": "budget_exhausted",
+          "correct": false,
+          "wall_seconds": 365.87357091903687,
+          "model_requests": 15,
+          "model_responses": 15,
+          "tool_calls": 25,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 424611,
+          "cached_input_tokens": 381952,
+          "uncached_input_tokens": 42659,
+          "output_tokens": 2987,
+          "reasoning_tokens": 1992,
+          "total_tokens": 427598
+        },
+        {
+          "id": "bc-0843",
+          "mode": "on",
+          "status": "completed",
+          "correct": false,
+          "wall_seconds": 330.30616188049316,
+          "model_requests": 20,
+          "model_responses": 19,
+          "tool_calls": 39,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 980139,
+          "cached_input_tokens": 904064,
+          "uncached_input_tokens": 76075,
+          "output_tokens": 3590,
+          "reasoning_tokens": 2149,
+          "total_tokens": 983729
+        },
+        {
+          "id": "bc-1058",
+          "mode": "off",
+          "status": "completed",
+          "correct": false,
+          "wall_seconds": 101.08261322975159,
+          "model_requests": 7,
+          "model_responses": 7,
+          "tool_calls": 11,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 185526,
+          "cached_input_tokens": 139904,
+          "uncached_input_tokens": 45622,
+          "output_tokens": 1093,
+          "reasoning_tokens": 283,
+          "total_tokens": 186619
+        },
+        {
+          "id": "bc-1058",
+          "mode": "on",
+          "status": "completed",
+          "correct": false,
+          "wall_seconds": 255.91960072517395,
+          "model_requests": 14,
+          "model_responses": 13,
+          "tool_calls": 23,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 615991,
+          "cached_input_tokens": 549632,
+          "uncached_input_tokens": 66359,
+          "output_tokens": 2740,
+          "reasoning_tokens": 1336,
+          "total_tokens": 618731
+        },
+        {
+          "id": "bc-1147",
+          "mode": "off",
+          "status": "budget_exhausted",
+          "correct": false,
+          "wall_seconds": 376.1892104148865,
+          "model_requests": 19,
+          "model_responses": 19,
+          "tool_calls": 46,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 715079,
+          "cached_input_tokens": 670848,
+          "uncached_input_tokens": 44231,
+          "output_tokens": 3036,
+          "reasoning_tokens": 1426,
+          "total_tokens": 718115
+        },
+        {
+          "id": "bc-1147",
+          "mode": "on",
+          "status": "budget_exhausted",
+          "correct": false,
+          "wall_seconds": 367.4686131477356,
+          "model_requests": 20,
+          "model_responses": 20,
+          "tool_calls": 44,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 982963,
+          "cached_input_tokens": 918272,
+          "uncached_input_tokens": 64691,
+          "output_tokens": 2918,
+          "reasoning_tokens": 898,
+          "total_tokens": 985881
+        },
+        {
+          "id": "bc-1210",
+          "mode": "off",
+          "status": "budget_exhausted",
+          "correct": false,
+          "wall_seconds": 361.2275080680847,
+          "model_requests": 14,
+          "model_responses": 14,
+          "tool_calls": 33,
+          "initial_instructions_chars": 30774,
+          "input_tokens": 492034,
+          "cached_input_tokens": 450432,
+          "uncached_input_tokens": 41602,
+          "output_tokens": 3984,
+          "reasoning_tokens": 2833,
+          "total_tokens": 496018
+        },
+        {
+          "id": "bc-1210",
+          "mode": "on",
+          "status": "budget_exhausted",
+          "correct": false,
+          "wall_seconds": 385.69982957839966,
+          "model_requests": 14,
+          "model_responses": 14,
+          "tool_calls": 37,
+          "initial_instructions_chars": 101107,
+          "input_tokens": 764414,
+          "cached_input_tokens": 675200,
+          "uncached_input_tokens": 89214,
+          "output_tokens": 4745,
+          "reasoning_tokens": 3312,
+          "total_tokens": 769159
+        }
+      ]
+    }
+  },
+  "component_usage_scored": {
+    "full_skill_bodies_per_magi_run": [
+      "magi-orchestration",
+      "verite-absolue-mode",
+      "magi-struct-comp-governance"
+    ],
+    "magi_router_runs": 8,
+    "context_retrieval_runs": 8,
+    "context_sources_queried": {
+      "queried_builtin_export": 8,
+      "queried_project_registry": 8,
+      "queried_cognee": 8
+    },
+    "post_answer_gate_runs": 6,
+    "post_answer_artifact_runs": 6,
+    "native_delegation_calls": 0,
+    "native_memory_write_calls": 0,
+    "native_session_search_calls": 0,
+    "post_answer_steps_change_scored_answer": false
+  },
+  "descriptive_outcomes_scored": {
+    "off": {
+      "correct": 2,
+      "budget_exhausted": 4,
+      "explicit_unknown": 1,
+      "partial_answer": 1
+    },
+    "on": {
+      "correct": 3,
+      "budget_exhausted": 2,
+      "explicit_unknown": 2,
+      "partial_answer": 1
+    }
+  },
+  "recorded_solver_usage_by_stage": {
+    "calibration-v1": {
+      "input_tokens": 2166876,
+      "cached_input_tokens": 1953408,
+      "uncached_input_tokens": 213468,
+      "output_tokens": 7038,
+      "reasoning_tokens": 2941,
+      "total_tokens": 2173914,
+      "request_records": 49,
+      "completed_response_records": 48
+    },
+    "calibration-v2": {
+      "input_tokens": 3158744,
+      "cached_input_tokens": 2906240,
+      "uncached_input_tokens": 252504,
+      "output_tokens": 11077,
+      "reasoning_tokens": 4813,
+      "total_tokens": 3169821,
+      "request_records": 74,
+      "completed_response_records": 73
+    },
+    "main-v1": {
+      "input_tokens": 10773802,
+      "cached_input_tokens": 9834368,
+      "uncached_input_tokens": 939434,
+      "output_tokens": 44276,
+      "reasoning_tokens": 20055,
+      "total_tokens": 10818078,
+      "request_records": 260,
+      "completed_response_records": 252
+    }
+  },
+  "recorded_grader_usage_by_stage": {
+    "calibration-v2": {
+      "input_tokens": 2074,
+      "cached_input_tokens": 0,
+      "uncached_input_tokens": 2074,
+      "output_tokens": 141,
+      "reasoning_tokens": 0,
+      "total_tokens": 2215
+    },
+    "main-v1": {
+      "input_tokens": 6721,
+      "cached_input_tokens": 0,
+      "uncached_input_tokens": 6721,
+      "output_tokens": 528,
+      "reasoning_tokens": 0,
+      "total_tokens": 7249
+    }
+  },
+  "accounting_limitations": [
+    "Input includes cached input; output includes reasoning. Do not add either subset again.",
+    "Request counters count instrumented payload constructions, not verified billable requests or every HTTP retry.",
+    "Usage reflects recorded responses only; missing/in-flight responses and parent/setup/conversation work are not fully measured.",
+    "Pre/post-task deterministic orchestration commands are separate from model-requested tool-call totals.",
+    "Per-run wall time comes from the supervisor and includes process startup plus post-answer gate/artifact commands when reached; it excludes separate grading and parent/setup/conversation work.",
+    "No monetary total or price assumption is supplied."
+  ],
+  "interrupted_calibration": {
+    "tag": "calibration-v1",
+    "reason": "Native heap abort during concurrent extraction; no scored tasks had started.",
+    "resolution": "Run search/extraction in disposable subprocesses in both conditions, repeat live preflight and calibration with unchanged calibration tasks.",
+    "scored": false,
+    "recorded_usage_retained": true
+  },
+  "publication": {
+    "includes": [
+      "protocol description",
+      "source provenance and sampling indices",
+      "aggregate and per-run numeric metrics",
+      "offline consistency checks"
+    ],
+    "excludes": [
+      "benchmark question text and answer key",
+      "raw solver answers and model/tool traces",
+      "personal memories and conversations",
+      "private skill bodies and prompts",
+      "credentials and host-specific configuration",
+      "private harness and retrieval snapshot"
+    ],
+    "reproducibility": "Selection and arithmetic are reproducible from published data. Independent regrading and exact end-to-end reproduction are not enabled by this public subset.",
+    "source_file_sha256": {
+      "protocol.json": "c257562e86879d1ad8f8fff269ba9086a36f548405cba44d702086ad82983ca1",
+      "selection.json": "c77a7f117a75d2ab6f3315bf10aed4cc7423667a4dad44abf6cf526a23cfd4d4",
+      "reports/main-v1-summary.json": "ebeba5af02e70bdbd282f8a7ec4f91d9f8535aee4591bc82b10d16d4d55ffcc6",
+      "reports/calibration-v2-summary.json": "4d526346cbed9b0875e703aa734b6087b6ca7581613372ed39cb055e67327ee3",
+      "reports/verification.json": "52151caed29671333c6d725280793135175dcac4aa63f493a91832598dbb0cb0"
+    },
+    "hash_limit": "These hashes identify retained local evidence; they do not authenticate its truth or constitute independent public verification."
+  }
+}

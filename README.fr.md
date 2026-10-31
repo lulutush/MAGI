@@ -58,6 +58,12 @@ Le parent doit exister hors du dépôt et ne comporter aucun lien symbolique ; l
 - Le contrôle de preuves vérifie des déclarations ; il n'authentifie pas la réalité des preuves.
 - Aucun bénéfice universel n'est revendiqué ; protocole d'évaluation comparatif fourni.
 
+## Évaluation exploratoire publiée
+
+Une [étude BrowseComp du 30 octobre 2026](docs/evaluations/2026-10-30-browsecomp.fr.md) observe **2/8 réponses correctes avec Hermes standard et 3/8 avec une installation MAGI intégrée**, avec davantage de tokens et **sans bénéfice statistiquement établi**. Elle concerne une installation particulière, pas le seul paquet public : ce dépôt ne reproduit pas son environnement privé d'exécution.
+
+Le rapport distingue calibration et score final, publie les mesures par essai, le protocole, les incidents et les limites. Les [données chiffrées](docs/evaluations/2026-10-30-browsecomp.data.json) permettent des contrôles de cohérence hors ligne, pas une nouvelle correction indépendante des réponses.
+
 ## Licence et origine
 
 **MAGI — projet initié et piloté par Lucas.**

@@ -1,6 +1,14 @@
-# Evaluation plan
+# Evaluation: recorded studies and proposed plan
 
-**Status: proposed behavioral evaluation, not executed results.** This document contains synthetic cases and a study design. It reports no quality improvement, anti-hallucination rate, benchmark score, or live adapter success. Mechanical CLI tests, if run and recorded elsewhere, do not establish assistant behavior or comparative quality.
+## Recorded exploratory study
+
+**2026-10-30 — BrowseComp, native Hermes deployment:** standard Hermes **2/8** correct; integrated MAGI **3/8** correct; one discordant success, **no statistically established benefit**, and higher token usage. Valid calibration was **1/2 in each condition**, separate from the scored sample.
+
+Read the [English report](evaluations/2026-10-30-browsecomp.md), [rapport français](evaluations/2026-10-30-browsecomp.fr.md), and [numeric data](evaluations/2026-10-30-browsecomp.data.json), including per-run outcomes, budgets, component use, interrupted calibration, accounting limits and offline consistency checks. The study used a specific integrated deployment, **not the standalone public package**. Private context and the execution harness are not published; arithmetic can be checked, but exact end-to-end reproduction and independent regrading are not enabled by this subset.
+
+## Proposed behavioral evaluation plan
+
+**Status of the remaining sections: proposed, not executed results.** The synthetic cases and wider study design below have not been run merely because an exploratory report is linked above. They are not a retroactive preregistration of that report and make no anti-hallucination-rate or live-adapter-success claim. Mechanical CLI tests do not establish assistant behavior or comparative quality.
 
 ## Questions to answer
 
